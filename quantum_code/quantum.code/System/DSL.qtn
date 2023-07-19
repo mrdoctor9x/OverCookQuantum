@@ -1,0 +1,9 @@
+﻿component PlayerLink
+{
+    player_ref Player;
+}
+component PlayerData
+{
+    int hp;
+    FP speed;
+}

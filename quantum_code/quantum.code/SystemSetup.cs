@@ -27,6 +27,7 @@ namespace Quantum
                 // user systems go here 
                 new MovementSystem(),
                 new PlayerSpawnSystem(),
+                new InteractSystem()
             };
         }
     }

@@ -83,6 +83,10 @@
     <Compile Include="SimulationConfig.User.cs" />
     <Compile Include="SystemSetup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\CheckPoint\CookPlace.cs" />
+    <Compile Include="System\CheckPoint\FinishPlace.cs" />
+    <Compile Include="System\CheckPoint\IngredientPlace.cs" />
+    <Compile Include="System\InteractSystem.cs" />
     <Compile Include="System\MovementSystem.cs" />
     <Compile Include="System\PlayerSpawnSystem.cs" />
   </ItemGroup>

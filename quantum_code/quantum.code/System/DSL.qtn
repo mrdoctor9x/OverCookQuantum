@@ -6,4 +6,5 @@ component PlayerData
 {
     int hp;
     FP speed;
+    bool isInteractable;
 }

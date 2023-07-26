@@ -16,9 +16,11 @@ namespace Quantum
             public CharacterController3D* CharacterController;
             public PlayerData* PlayerData;
             public Transform3D* Transforms;
+            public PlayerLink* player;
         }
         public override void Update(Frame f, ref Filter filter)
         {
+            //var filtered = f.Filter<Transform3D, PhysicsBody3D>();
             Input input = default;
             if (f.Unsafe.TryGetPointer(filter.Entity, out PlayerLink* playerLink))
             {
@@ -28,6 +30,30 @@ namespace Quantum
             if (input.Jump.WasPressed)
             {
                 filter.CharacterController->Jump(f);
+            }
+            if (input.Interact.WasPressed && filter.PlayerData->isInteractable)
+            {
+
+                if(filter.PlayerData->indexInteract == 0)
+                {
+                    if(filter.PlayerData->indexObject == 0)
+                    {
+                        Interact(f, filter);
+                    }
+                }
+                else if(filter.PlayerData->indexInteract == 1)
+                {
+                    if (filter.PlayerData->indexObject != 0)
+                    {
+                        Cook(f, filter);
+                    }
+
+                }
+                else
+                {
+
+                }
+
             }
 
             filter.PlayerData->speed = input.Direction.XOY.Magnitude;
@@ -47,5 +73,32 @@ namespace Quantum
                 filter.Transforms->Rotation = FPQuaternion.LookRotation(dir);
             }
         }
+        public void Interact(Frame f, Filter filter)
+        {
+            Log.Debug("Pick Up");
+            f.Events.PickUp(filter.player->Player, filter.Entity, 1);
+
+            filter.PlayerData->indexObject = 1;
+        }
+        public void Cook(Frame f, Filter filter)
+        {
+            filter.PlayerData->Cook();
+
+            Log.Debug("Cook");
+            var kitchen = f.Unsafe.GetPointer<Kitchen>(filter.PlayerData->EntityInteract);
+            if (kitchen->isCook)
+            {
+
+            }
+            else
+            {
+                kitchen->indexObject = filter.PlayerData->indexObject;
+                filter.PlayerData->indexObject = 0;
+                kitchen->isCook = true;
+
+                f.Events.Cook(filter.player->Player, filter.Entity);
+            }
+        }
     }
 }
+

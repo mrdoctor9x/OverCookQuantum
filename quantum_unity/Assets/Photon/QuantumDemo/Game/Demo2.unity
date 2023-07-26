@@ -506,7 +506,19 @@ MonoBehaviour:
     m_ActionId: 06e6121e-c5e3-4e5f-a931-d7d259a39468
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 206999466}
+        m_TargetAssemblyTypeName: LocalInput, Assembly-CSharp
+        m_MethodName: OnInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 66a2b5f5-d2bd-445d-97d6-41ee4c0972e2
     m_ActionName: Player/Interact[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
@@ -528,7 +540,7 @@ GameObject:
   - component: {fileID: 309797165}
   - component: {fileID: 309797164}
   m_Layer: 0
-  m_Name: BoxEntity (1)
+  m_Name: Cook Viual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -791,7 +803,7 @@ GameObject:
   - component: {fileID: 314230350}
   - component: {fileID: 314230349}
   m_Layer: 0
-  m_Name: BoxEntity (2)
+  m_Name: End Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3386,6 +3398,7 @@ GameObject:
   - component: {fileID: 559858524}
   - component: {fileID: 559858523}
   - component: {fileID: 559858522}
+  - component: {fileID: 559858526}
   m_Layer: 0
   m_Name: Ingredient Trigger
   m_TagString: Untagged
@@ -3636,6 +3649,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559858520}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &559858526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559858520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d556a2e22d3d242a3530e6dff2c6d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prototype:
+    _empty_prototype_dummy_field_: 0
 --- !u!1 &883232861
 GameObject:
   m_ObjectHideFlags: 0
@@ -3650,7 +3677,7 @@ GameObject:
   - component: {fileID: 883232863}
   - component: {fileID: 883232862}
   m_Layer: 0
-  m_Name: BoxEntity
+  m_Name: Ingredient Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4068,6 +4095,7 @@ GameObject:
   - component: {fileID: 1357465540}
   - component: {fileID: 1357465539}
   - component: {fileID: 1357465538}
+  - component: {fileID: 1357465542}
   m_Layer: 0
   m_Name: End Trigger
   m_TagString: Untagged
@@ -4318,6 +4346,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357465536}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1357465542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357465536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532065f17ac8ebe4485351468affb7a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prototype:
+    _empty_prototype_dummy_field_: 0
 --- !u!1 &1391781204
 GameObject:
   m_ObjectHideFlags: 0
@@ -4565,6 +4607,7 @@ GameObject:
   - component: {fileID: 1846401058}
   - component: {fileID: 1846401057}
   - component: {fileID: 1846401056}
+  - component: {fileID: 1846401060}
   m_Layer: 0
   m_Name: Cook Trigger
   m_TagString: Untagged
@@ -4815,6 +4858,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846401054}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1846401060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846401054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 247ad33b5650ede47a2a65c53b25260f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prototype:
+    isCook:
+      Value: 0
+    indexObject: 0
 --- !u!1 &2068968504
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,10 +10,35 @@ public class PlayerSetup : QuantumCallbacks
     [SerializeField] EntityView entityView;
     [SerializeField] HUIDHandle huid;
     [SerializeField] Animator animator;
+    [SerializeField] GameObject ingredient;
+    [SerializeField] GameObject ingredient2;
+    [SerializeField] Transform anchorHold;
+
     PlayerRef playerRef;
+    GameObject item;
     private void Awake()
     {
+        QuantumEvent.Subscribe<EventPickUp>(this, OnPickUp);
+        QuantumEvent.Subscribe<EventCook>(this, OnCook);
     }
+
+    private void OnCook(EventCook callback)
+    {
+        if (entityView.EntityRef != callback.Entity)
+            return;
+        if(item != null)
+            Destroy(item);
+    }
+
+    private void OnPickUp(EventPickUp callback)
+    {
+        if (entityView.EntityRef != callback.Entity)
+            return;
+        Debug.Log($"pick up unity {callback.indexObject}");
+        item = Instantiate(ingredient, anchorHold.position, Quaternion.identity, anchorHold);
+
+    }
+
     public void SetupPlayer(QuantumGame game)
     {
 

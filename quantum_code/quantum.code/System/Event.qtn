@@ -1,0 +1,9 @@
+﻿event PickUp {
+	player_ref Player;
+	EntityRef Entity;
+	int indexObject;
+}
+event Cook {
+	player_ref Player;
+	EntityRef Entity;
+}

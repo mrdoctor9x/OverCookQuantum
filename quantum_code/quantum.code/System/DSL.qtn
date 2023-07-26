@@ -7,4 +7,22 @@ component PlayerData
     int hp;
     FP speed;
     bool isInteractable;
+    int indexInteract;
+    int indexObject;
+    EntityRef EntityInteract;
+    asset_ref<GameplaySettings> setting;
+}
+
+component Kitchen
+{
+    bool isCook;
+    int indexObject;
+}
+component BoxIngredient
+{
+
+}
+component End
+{
+
 }

@@ -12,6 +12,23 @@ namespace Quantum
         {
             if (f.Has<PlayerData>(info.Other)) {
                 var data = f.Unsafe.GetPointer<PlayerData>(info.Other);
+
+                if (f.Has<BoxIngredient>(info.Entity))
+                {
+                    data->indexInteract = 0;
+                    data->EntityInteract = info.Entity;
+                }
+                if (f.Has<Kitchen>(info.Entity))
+                {
+                    data->indexInteract = 1;
+                    data->EntityInteract = info.Entity;
+                }
+                if (f.Has<End>(info.Entity))
+                {
+                    data->indexInteract = 2;
+                    data->EntityInteract = info.Entity;
+                }
+
                 data->isInteractable = true;
             }
         }
@@ -22,6 +39,7 @@ namespace Quantum
             if (f.Has<PlayerData>(info.Other))
             {
                 var data = f.Unsafe.GetPointer<PlayerData>(info.Other);
+
                 data->isInteractable = false;
             }
         }

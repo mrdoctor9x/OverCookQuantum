@@ -27,14 +27,16 @@ namespace Quantum
             var playerData = new PlayerData()
             {
                 hp = 1000,
-                speed = 2
-            };
+                speed = 2,
+                setting = frame.FindAsset<GameplaySettings>("Resources/DB/Asset/GameSetting")
+        };
             frame.Add(entity, playerData);
             // Offset the instantiated object in the world, based in its ID.
             if (frame.Unsafe.TryGetPointer<Transform3D>(entity, out var transform))
             {
                 transform->Position.X = 2 + player;
             }
+
         }
     }
 }

@@ -6,6 +6,30 @@
 using System;
 namespace Quantum.Prototypes.Unity {
   [System.SerializableAttribute()]
+  [Quantum.Prototypes.PrototypeAttribute(typeof(Quantum.PlayerData))]
+  public class PlayerData_Prototype : Quantum.PrototypeAdapter<Quantum.Prototypes.PlayerData_Prototype> {
+    public System.Int32 hp;
+    public Photon.Deterministic.FP speed;
+    public Quantum.QBoolean isInteractable;
+    public System.Int32 indexInteract;
+    public System.Int32 indexObject;
+    [Quantum.LocalReference]
+    public global::EntityPrototype EntityInteract;
+    public Quantum.AssetRefGameplaySettings setting;
+
+    public sealed override Quantum.Prototypes.PlayerData_Prototype Convert(EntityPrototypeConverter converter) {
+      var result = new Quantum.Prototypes.PlayerData_Prototype();
+      result.hp = this.hp;
+      result.speed = this.speed;
+      result.isInteractable = this.isInteractable;
+      result.indexInteract = this.indexInteract;
+      result.indexObject = this.indexObject;
+      converter.Convert(this.EntityInteract, out result.EntityInteract);
+      result.setting = this.setting;
+      return result;
+    }
+  }
+  [System.SerializableAttribute()]
   [Quantum.Prototypes.PrototypeAttribute(typeof(Quantum.PhysicsJoints3D))]
   public class PhysicsJoints3D_Prototype : Quantum.PrototypeAdapter<Quantum.Prototypes.PhysicsJoints3D_Prototype> {
     [Quantum.Inspector.DynamicCollectionAttribute()]

@@ -61,6 +61,11 @@ MonoBehaviour:
         Id:
           Value: 1974509169011461463
       ResourcePath: DB/Demo2_mesh
+    - Path: Resources/DB/Asset/GameSetting
+      AssetRef:
+        Id:
+          Value: 2328665933829071811
+      ResourcePath: DB/Asset/GameSetting
     - Path: Resources/DB/Demo1_mesh
       AssetRef:
         Id:

@@ -85,7 +85,10 @@ MonoBehaviour:
       MutableMode: 0
     MapEntities: []
   Prototypes:
-  - PlayerData: []
+  - BoxIngredient: []
+    End: []
+    Kitchen: []
+    PlayerData: []
     PlayerLink: []
     CharacterController2D: []
     CharacterController3D: []
@@ -177,7 +180,10 @@ MonoBehaviour:
     View: []
     PhysicsJoints2D: []
     PhysicsJoints3D: []
-  - PlayerData: []
+  - BoxIngredient: []
+    End: []
+    Kitchen: []
+    PlayerData: []
     PlayerLink: []
     CharacterController2D: []
     CharacterController3D: []
@@ -269,7 +275,10 @@ MonoBehaviour:
     View: []
     PhysicsJoints2D: []
     PhysicsJoints3D: []
-  - PlayerData: []
+  - BoxIngredient: []
+    End: []
+    Kitchen: []
+    PlayerData: []
     PlayerLink: []
     CharacterController2D: []
     CharacterController3D: []
@@ -361,7 +370,11 @@ MonoBehaviour:
     View: []
     PhysicsJoints2D: []
     PhysicsJoints3D: []
-  - PlayerData: []
+  - BoxIngredient:
+    - _empty_prototype_dummy_field_: 0
+    End: []
+    Kitchen: []
+    PlayerData: []
     PlayerLink: []
     CharacterController2D: []
     CharacterController3D: []
@@ -410,7 +423,7 @@ MonoBehaviour:
     PhysicsCallbacks2D: []
     PhysicsCallbacks3D:
     - CallbackFlags:
-        Value: 128
+        Value: 384
     Transform2D: []
     Transform2DVertical: []
     Transform3D:
@@ -431,7 +444,13 @@ MonoBehaviour:
     View: []
     PhysicsJoints2D: []
     PhysicsJoints3D: []
-  - PlayerData: []
+  - BoxIngredient: []
+    End: []
+    Kitchen:
+    - isCook:
+        Value: 0
+      indexObject: 0
+    PlayerData: []
     PlayerLink: []
     CharacterController2D: []
     CharacterController3D: []
@@ -480,7 +499,7 @@ MonoBehaviour:
     PhysicsCallbacks2D: []
     PhysicsCallbacks3D:
     - CallbackFlags:
-        Value: 128
+        Value: 384
     Transform2D: []
     Transform2DVertical: []
     Transform3D:
@@ -501,7 +520,11 @@ MonoBehaviour:
     View: []
     PhysicsJoints2D: []
     PhysicsJoints3D: []
-  - PlayerData: []
+  - BoxIngredient: []
+    End:
+    - _empty_prototype_dummy_field_: 0
+    Kitchen: []
+    PlayerData: []
     PlayerLink: []
     CharacterController2D: []
     CharacterController3D: []
@@ -550,7 +573,7 @@ MonoBehaviour:
     PhysicsCallbacks2D: []
     PhysicsCallbacks3D:
     - CallbackFlags:
-        Value: 128
+        Value: 384
     Transform2D: []
     Transform2DVertical: []
     Transform3D:

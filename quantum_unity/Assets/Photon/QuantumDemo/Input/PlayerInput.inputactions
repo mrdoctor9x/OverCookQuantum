@@ -84,7 +84,7 @@
                     "name": "",
                     "id": "3671acc8-8d2b-4a79-8dcb-e4e2d18e7f8f",
                     "path": "<Keyboard>/f",
-                    "interactions": "",
+                    "interactions": "Tap",
                     "processors": "",
                     "groups": "",
                     "action": "Interact",

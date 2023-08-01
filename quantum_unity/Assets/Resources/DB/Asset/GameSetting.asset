@@ -17,4 +17,4 @@ MonoBehaviour:
       Path: Resources/DB/Asset/GameSetting
       Guid:
         Value: 2328665933829071811
-    playerMax: 0
+    playerMax: 10

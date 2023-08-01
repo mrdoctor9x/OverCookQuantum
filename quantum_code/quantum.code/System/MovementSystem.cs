@@ -75,16 +75,16 @@ namespace Quantum
         }
         public void Interact(Frame f, Filter filter)
         {
-            Log.Debug("Pick Up");
+            int random = f.RNG->Next(0, 100);
+            Log.Debug($"Pick Up {random}");
             f.Events.PickUp(filter.player->Player, filter.Entity, 1);
 
             filter.PlayerData->indexObject = 1;
         }
         public void Cook(Frame f, Filter filter)
         {
+            var setting = f.FindAsset<GameplaySettings>("Resources/DB/Asset/GameSetting");
             filter.PlayerData->Cook();
-
-            Log.Debug("Cook");
             var kitchen = f.Unsafe.GetPointer<Kitchen>(filter.PlayerData->EntityInteract);
             if (kitchen->isCook)
             {

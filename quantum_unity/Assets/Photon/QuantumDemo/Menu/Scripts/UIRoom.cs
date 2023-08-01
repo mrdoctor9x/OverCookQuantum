@@ -312,6 +312,7 @@ namespace Quantum.Demo
             var config = RuntimeConfigContainer != null ? RuntimeConfig.FromByteArray(RuntimeConfig.ToByteArray(RuntimeConfigContainer.Config)) : new RuntimeConfig();
 
             config.Map.Id = mapGuid;
+            config.Seed = UnityEngine.Random.Range(0, 100);
 
             var param = new QuantumRunner.StartParameters
             {
@@ -327,7 +328,7 @@ namespace Quantum.Demo
                 NetworkClient = UIMain.Client,
                 StartGameTimeoutInSeconds = 10.0f
             };
-
+            UIMain.Client.CurrentRoom.IsOpen = false;
             Debug.Log($"Starting QuantumRunner with map guid '{mapGuid}' and requesting {param.LocalPlayerCount} player(s).");
 
             // Joining with the same client id will result in the same quantum player slot which is important for reconnecting.

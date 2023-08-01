@@ -1,0 +1,24 @@
+﻿singleton component GameManager
+{
+	GameState gameState;
+	FP Timer;
+	bool isWin;
+}
+
+synced event GameplayStateChanged 
+{
+	GameState gameState;
+}
+
+enum GameState 
+{
+	None,
+	Ready,
+	Start,
+	End
+}
+
+global
+{
+	int playerCount;
+}

@@ -87,6 +87,7 @@ MonoBehaviour:
   Prototypes:
   - BoxIngredient: []
     End: []
+    GameManager: []
     Kitchen: []
     PlayerData: []
     PlayerLink: []
@@ -182,6 +183,7 @@ MonoBehaviour:
     PhysicsJoints3D: []
   - BoxIngredient: []
     End: []
+    GameManager: []
     Kitchen: []
     PlayerData: []
     PlayerLink: []
@@ -277,6 +279,7 @@ MonoBehaviour:
     PhysicsJoints3D: []
   - BoxIngredient: []
     End: []
+    GameManager: []
     Kitchen: []
     PlayerData: []
     PlayerLink: []
@@ -373,6 +376,7 @@ MonoBehaviour:
   - BoxIngredient:
     - _empty_prototype_dummy_field_: 0
     End: []
+    GameManager: []
     Kitchen: []
     PlayerData: []
     PlayerLink: []
@@ -446,6 +450,7 @@ MonoBehaviour:
     PhysicsJoints3D: []
   - BoxIngredient: []
     End: []
+    GameManager: []
     Kitchen:
     - isCook:
         Value: 0
@@ -523,6 +528,7 @@ MonoBehaviour:
   - BoxIngredient: []
     End:
     - _empty_prototype_dummy_field_: 0
+    GameManager: []
     Kitchen: []
     PlayerData: []
     PlayerLink: []

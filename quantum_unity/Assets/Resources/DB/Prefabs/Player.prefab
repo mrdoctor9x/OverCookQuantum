@@ -2341,8 +2341,8 @@ MonoBehaviour:
       Value: 0
   PhysicsBody:
     IsEnabled: 0
-    Version2D: 0
-    Version3D: 0
+    Version2D: 2
+    Version3D: 2
     Config2D: 116
     Config3D: 58
     RotationFreeze: 0
@@ -2461,7 +2461,19 @@ MonoBehaviour:
         m_CallState: 2
   OnEntityDestroyed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7276361132322100084}
+        m_TargetAssemblyTypeName: HUIDHandle, Assembly-CSharp
+        m_MethodName: OnDisconnected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8047042619472215246
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -88,9 +88,10 @@
     <Compile Include="System\CheckPoint\FinishPlace.cs" />
     <Compile Include="System\CheckPoint\IngredientPlace.cs" />
     <Compile Include="System\Extend\PlayerData.cs" />
+    <Compile Include="System\GamePlay\GameManagerQuantum.cs" />
+    <Compile Include="System\GamePlay\GameManagerSystem.cs" />
     <Compile Include="System\InteractSystem.cs" />
     <Compile Include="System\MovementSystem.cs" />
-    <Compile Include="System\PlayerSpawnSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="db.json" />
@@ -99,8 +100,10 @@
     <None Include="System\Asset\Asset.qtn" />
     <None Include="System\DSL.qtn" />
     <None Include="System\Event.qtn" />
+    <None Include="System\GamePlay\GameManger.qtn" />
     <None Include="System\Input.qtn" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent Condition="'$(OS)' == 'Windows_NT'">"$(ProjectDir)..\..\tools\codegen_unity\quantum.codegen.unity.host.exe" "$(TargetDir)\quantum.code.dll" "$(ProjectDir)..\..\quantum_unity\Assets"</PostBuildEvent>

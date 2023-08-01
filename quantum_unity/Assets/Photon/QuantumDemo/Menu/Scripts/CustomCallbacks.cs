@@ -8,7 +8,15 @@ public class CustomCallbacks : QuantumCallbacks
     {
         // paused on Start means waiting for Snapshot
         if (game.Session.IsPaused) return;
-
+        JoinGame(game);
+    }
+    public override void OnGameResync(Quantum.QuantumGame game)
+    {
+        Debug.Log("Detected Resync. Verified tick: " + game.Frames.Verified.Number);
+        JoinGame(game);
+    }
+    private void JoinGame(QuantumGame game)
+    {
         playerData.playerName = PrefManager.PlayerName;
 
         foreach (var lp in game.GetLocalPlayers())
@@ -18,9 +26,6 @@ public class CustomCallbacks : QuantumCallbacks
         }
     }
 
-    public override void OnGameResync(Quantum.QuantumGame game)
-    {
-        Debug.Log("Detected Resync. Verified tick: " + game.Frames.Verified.Number);
-    }
+
 }
 

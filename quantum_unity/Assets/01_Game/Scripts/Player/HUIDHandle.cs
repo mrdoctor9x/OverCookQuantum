@@ -21,7 +21,13 @@ public class HUIDHandle : MonoBehaviour
     }
     private void UpdateUIPosition()
     {
+        if (anchorHUID == null)
+            return;
         var pos = Camera.main.WorldToScreenPoint(anchorHUID.position);
         transform.position = pos;
+    }
+    public void OnDisconnected()
+    {
+        Destroy(gameObject);
     }
 }

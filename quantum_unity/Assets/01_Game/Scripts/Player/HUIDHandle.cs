@@ -11,6 +11,7 @@ public class HUIDHandle : MonoBehaviour
 
     public void Setup(string name)
     {
+        
         nameTxt.text = name;
         var parent = GameObject.Find("HUIDparent").GetComponent<Transform>();
         transform.parent = parent;

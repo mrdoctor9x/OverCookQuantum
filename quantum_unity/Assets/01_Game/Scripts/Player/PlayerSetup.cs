@@ -60,7 +60,7 @@ public class PlayerSetup : QuantumCallbacks
     }
     private void SetupHuid(Frame f)
     {
-        huid.Setup(f.GetPlayerData(playerRef).playerName);
+        huid.Setup(f.GetPlayerDataOrAI(playerRef).playerName);
     }
     private void SetupCamera()
     {

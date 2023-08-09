@@ -81,7 +81,8 @@ namespace Quantum.Demo
             _enterRoomParams = new EnterRoomParams();
             _enterRoomParams.RoomOptions = new RoomOptions();
             _enterRoomParams.RoomOptions.IsVisible = true;
-            _enterRoomParams.RoomOptions.MaxPlayers = Input.MAX_COUNT;
+            //_enterRoomParams.RoomOptions.MaxPlayers = Input.MAX_COUNT;
+            _enterRoomParams.RoomOptions.MaxPlayers = 4;
             _enterRoomParams.RoomOptions.Plugins = new string[] { "QuantumPlugin" };
             _enterRoomParams.RoomOptions.CustomRoomProperties = new Hashtable {
         { "HIDE-ROOM", false },

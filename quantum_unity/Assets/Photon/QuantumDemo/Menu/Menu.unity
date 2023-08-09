@@ -4941,6 +4941,9 @@ MonoBehaviour:
     SimulationConfig:
       Id:
         Value: 0
+    GameplaySettings:
+      Id:
+        Value: 2328665933829071811
 --- !u!224 &833318423
 RectTransform:
   m_ObjectHideFlags: 0

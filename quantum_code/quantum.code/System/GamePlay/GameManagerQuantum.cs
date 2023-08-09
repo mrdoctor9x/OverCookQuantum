@@ -10,6 +10,7 @@ namespace Quantum
     {
         public void Initialize(Frame f)
         {
+            CheckRoom(f);
             SetState(f, GameState.Ready);
         }
         public void Update(Frame f)
@@ -21,6 +22,20 @@ namespace Quantum
                 case GameState.Ready: UpdateReady(f); break;
                 case GameState.Start: UpdateStart(f); break;
                 case GameState.End: UpdateEnd(f); break;
+            }
+        }
+
+        public void CheckRoom(Frame f)
+        {
+            var setting = f.FindAsset<GameplaySettings>(f.RuntimeConfig.GameplaySettings.Id);
+            
+            if (f.PlayerCount < setting.PlayerCount)
+            {
+                var slotEmpty = f.PlayerCount - f.Global->playerCount;
+                for (int i = f.PlayerCount; i < setting.PlayerCount; i++)
+                {
+                    OnBotAIDataSet(f, i);
+                }
             }
         }
         public void UpdateReady(Frame f)
@@ -42,6 +57,38 @@ namespace Quantum
 
         }
 
+        public void OnBotAIDataSet(Frame f, PlayerRef player)
+        {
+            f.Global->playerCount += 1;
+            var data = f.GetPlayerDataOrAI(player);
+
+            // resolve the reference to the prototpye.
+            var prototype = f.FindAsset<EntityPrototype>(data.CharacterPrototype.Id);
+
+            // Create a new entity for the player based on the prototype.
+            var entity = f.Create(prototype);
+
+            // Create a PlayerLink component. Initialize it with the player. Add the component to the player entity.
+            var playerLink = new PlayerLink()
+            {
+                Player = player,
+                playerState = PlayerState.Bot
+            };
+            f.Add(entity, playerLink);
+            var playerData = new PlayerData()
+            {
+                hp = 1000,
+                speed = 2,
+            };
+            f.Add(entity, playerData);
+            // Offset the instantiated object in the world, based in its ID.
+            if (f.Unsafe.TryGetPointer<Transform3D>(entity, out var transform))
+            {
+                transform->Position.X = 2 + player;
+            }
+            
+        }
+
         public void OnPlayerDataSet(Frame f, PlayerRef player)
         {
             f.Global->playerCount += 1;
@@ -57,6 +104,7 @@ namespace Quantum
             var playerLink = new PlayerLink()
             {
                 Player = player,
+                playerState = PlayerState.Player
             };
             f.Add(entity, playerLink);
             var playerData = new PlayerData()

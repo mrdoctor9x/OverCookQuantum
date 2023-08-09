@@ -1,6 +1,7 @@
 ﻿component PlayerLink
 {
     player_ref Player;
+    PlayerState playerState;
 }
 component PlayerData
 {
@@ -25,4 +26,10 @@ component BoxIngredient
 component End
 {
 
+}
+enum PlayerState 
+{
+	None,
+	Player,
+	Bot
 }

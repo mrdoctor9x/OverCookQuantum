@@ -35,10 +35,12 @@ MonoBehaviour:
     OptionalTriangleMetadataSerializationEnabled: 1
     SerializeTrianglesMetadata: 0
     StaticColliders3DTrianglesBinaryFile: 
-    GridSizeX: 2
-    GridSizeY: 2
+    GridSizeX: 64
+    GridSizeY: 64
     GridNodeSize: 2
-    NavMeshLinks: []
+    NavMeshLinks:
+    - Id:
+        Value: 1778724518292626643
     Regions: []
     StaticColliders2D: []
     StaticColliders3D:
@@ -81,6 +83,47 @@ MonoBehaviour:
             Value: 0
         IsTrigger: 0
         ColliderIndex: 0
+        MutableMode: 0
+      MutableMode: 0
+    - Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+        W:
+          RawValue: 65536
+      Position:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 65536
+        Z:
+          RawValue: -655360
+      PhysicsMaterial:
+        Id:
+          Value: 0
+      ShapeType: 2
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 1146880
+        Y:
+          RawValue: 98304
+        Z:
+          RawValue: 32768
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: Obstacle
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 0
+        ColliderIndex: 1
         MutableMode: 0
       MutableMode: 0
     MapEntities: []

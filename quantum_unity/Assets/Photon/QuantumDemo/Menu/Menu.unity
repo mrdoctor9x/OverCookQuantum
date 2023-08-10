@@ -4944,6 +4944,9 @@ MonoBehaviour:
     GameplaySettings:
       Id:
         Value: 2328665933829071811
+    BotNavmesh:
+      Id:
+        Value: 4162657282134114287
 --- !u!224 &833318423
 RectTransform:
   m_ObjectHideFlags: 0

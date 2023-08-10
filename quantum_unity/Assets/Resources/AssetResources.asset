@@ -41,6 +41,11 @@ MonoBehaviour:
         Id:
           Value: 5
       ResourcePath: DB/Configs/SimulationConfig
+    - Path: Resources/DB/Prefabs/Bot|EntityPrototype
+      AssetRef:
+        Id:
+          Value: 162736046808386119
+      ResourcePath: DB/Prefabs/Bot
     - Path: Resources/DB/Prefabs/Player|EntityView
       AssetRef:
         Id:
@@ -56,6 +61,11 @@ MonoBehaviour:
         Id:
           Value: 1710471675203725834
       ResourcePath: DB/Map1
+    - Path: Resources/DB/Demo2_Navmesh
+      AssetRef:
+        Id:
+          Value: 1778724518292626643
+      ResourcePath: DB/Demo2_Navmesh
     - Path: Resources/DB/Demo2_mesh
       AssetRef:
         Id:
@@ -71,6 +81,16 @@ MonoBehaviour:
         Id:
           Value: 2392221882059614467
       ResourcePath: DB/Demo1_mesh
+    - Path: Resources/DB/Demo2_Navmesh_data
+      AssetRef:
+        Id:
+          Value: 2670734534309604994
+      ResourcePath: DB/Demo2_Navmesh_data
+    - Path: Resources/DB/Prefabs/Bot|EntityView
+      AssetRef:
+        Id:
+          Value: 2930811202399310502
+      ResourcePath: DB/Prefabs/Bot
     - Path: Resources/DB/Map1_mesh
       AssetRef:
         Id:
@@ -81,6 +101,11 @@ MonoBehaviour:
         Id:
           Value: 4082724046453821009
       ResourcePath: DB/Demo1
+    - Path: Resources/DB/Configs/BotNavMesh
+      AssetRef:
+        Id:
+          Value: 4162657282134114287
+      ResourcePath: DB/Configs/BotNavMesh
     - Path: Resources/DB/Demo2
       AssetRef:
         Id:

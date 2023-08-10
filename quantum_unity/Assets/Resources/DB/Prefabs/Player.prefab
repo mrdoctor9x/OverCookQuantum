@@ -2316,7 +2316,7 @@ MonoBehaviour:
           X:
             RawValue: 0
           Y:
-            RawValue: 65536
+            RawValue: 173670
           Z:
             RawValue: 0
         BoxExtents:
@@ -2326,6 +2326,32 @@ MonoBehaviour:
             RawValue: 0
           Z:
             RawValue: 0
+        RotationOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        UserTag: 0
+        IsSetFromSourceCollider: 0
+      - ShapeType: 2
+        SphereRadius:
+          RawValue: 32768
+        PositionOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 65536
+          Z:
+            RawValue: 0
+        BoxExtents:
+          X:
+            RawValue: 65536
+          Y:
+            RawValue: 65536
+          Z:
+            RawValue: 65536
         RotationOffset:
           X:
             RawValue: 0

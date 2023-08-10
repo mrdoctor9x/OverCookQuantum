@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Photon.Deterministic;
 
 namespace Quantum
 {
@@ -24,7 +25,6 @@ namespace Quantum
                 case GameState.End: UpdateEnd(f); break;
             }
         }
-
         public void CheckRoom(Frame f)
         {
             var setting = f.FindAsset<GameplaySettings>(f.RuntimeConfig.GameplaySettings.Id);
@@ -56,7 +56,6 @@ namespace Quantum
         {
 
         }
-
         public void OnBotAIDataSet(Frame f, PlayerRef player)
         {
             f.Global->playerCount += 1;
@@ -81,10 +80,23 @@ namespace Quantum
                 speed = 2,
             };
             f.Add(entity, playerData);
+            
+            //navmesh
+            var config = f.FindAsset<NavMeshAgentConfig>(f.RuntimeConfig.BotNavmesh.Id);
+            var pathfinder = NavMeshPathfinder.Create(f, entity, config);
+            // find a random point to move to
+            var navmesh = f.Map.NavMeshes["Navmesh"];
+            var vectorMove = new FPVector3(0,FP._0_50,-20);
+            pathfinder.SetTarget(f, vectorMove, navmesh);
+
+            f.Set(entity, pathfinder);
+            f.Set(entity, new NavMeshSteeringAgent());
+            
             // Offset the instantiated object in the world, based in its ID.
             if (f.Unsafe.TryGetPointer<Transform3D>(entity, out var transform))
             {
                 transform->Position.X = 2 + player;
+                transform->Position.Y = 2;
             }
             
         }

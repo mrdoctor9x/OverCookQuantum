@@ -17,45 +17,13 @@ MonoBehaviour:
       Path: Resources/DB/Asset/GameSetting
       Guid:
         Value: 2328665933829071811
-    PlayerCount: 4
+    PlayerCount: 2
     AIPlayers:
     - CharacterPrototype:
         Id:
-          Value: 1302357803850533095
+          Value: 162736046808386119
       playerName: Bot
     - CharacterPrototype:
         Id:
-          Value: 1302357803850533095
-      playerName: Bot
-    - CharacterPrototype:
-        Id:
-          Value: 1302357803850533095
-      playerName: Bot
-    - CharacterPrototype:
-        Id:
-          Value: 1302357803850533095
-      playerName: Bot
-    - CharacterPrototype:
-        Id:
-          Value: 1302357803850533095
-      playerName: Bot
-    - CharacterPrototype:
-        Id:
-          Value: 1302357803850533095
-      playerName: Bot
-    - CharacterPrototype:
-        Id:
-          Value: 1302357803850533095
-      playerName: Bot
-    - CharacterPrototype:
-        Id:
-          Value: 1302357803850533095
-      playerName: Bot
-    - CharacterPrototype:
-        Id:
-          Value: 1302357803850533095
-      playerName: Bot
-    - CharacterPrototype:
-        Id:
-          Value: 1302357803850533095
+          Value: 162736046808386119
       playerName: Bot

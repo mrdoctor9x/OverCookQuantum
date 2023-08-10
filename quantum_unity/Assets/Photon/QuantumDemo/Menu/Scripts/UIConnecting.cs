@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ExitGames.Client.Photon;
 using Photon.Realtime;
@@ -76,13 +77,14 @@ namespace Quantum.Demo
                 Assert.Always(allMapsInResources.Length > 0);
                 defaultMapGuid = allMapsInResources[0].AssetObject.Guid.Value;
             }
-
+            var config = RuntimeConfigContainer != null ? RuntimeConfig.FromByteArray(RuntimeConfig.ToByteArray(RuntimeConfigContainer.Config)) : new RuntimeConfig();
+            //var setting = UnityDB.FindAsset<GameplaySettings>(config.GameplaySettings.Id);
             var joinRandomParams = new OpJoinRandomRoomParams();
             _enterRoomParams = new EnterRoomParams();
             _enterRoomParams.RoomOptions = new RoomOptions();
             _enterRoomParams.RoomOptions.IsVisible = true;
             //_enterRoomParams.RoomOptions.MaxPlayers = Input.MAX_COUNT;
-            _enterRoomParams.RoomOptions.MaxPlayers = 4;
+            _enterRoomParams.RoomOptions.MaxPlayers = 2;
             _enterRoomParams.RoomOptions.Plugins = new string[] { "QuantumPlugin" };
             _enterRoomParams.RoomOptions.CustomRoomProperties = new Hashtable {
         { "HIDE-ROOM", false },
